@@ -1,464 +1,617 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-  font-family: 'Poppins', sans-serif;
+<title>Portfolio - Ankit Pal</title>
 
-  background: linear-gradient(
-    135deg,
-    #1a0b2e 0%,
-    #2d1b4e 25%,
-    #3b1c5c 50%,
-    #1e2a5e 75%,
-    #0f1b3d 100%
-  );
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  color: #f0e9ff;
-  line-height: 1.7;
+<link rel="stylesheet" href="style.css">
+</head>
 
-  padding: 30px 15px;
+<body>
 
-  min-height: 100vh;
-}
+<!-- =========================
+     HAMBURGER
+========================= -->
 
+<button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+  ☰
+</button>
 
-.card {
-  max-width: 820px;
-  margin: 0 auto;
 
-  background: rgba(255,255,255,0.04);
+<!-- =========================
+     SIDE MENU
+========================= -->
 
-  border: 1px solid rgba(255,255,255,0.12);
+<div class="side-menu" id="sideMenu">
 
-  border-radius: 24px;
+  <button class="close-btn" id="closeBtn">×</button>
 
-  overflow: hidden;
+  <h2>Contact Details</h2>
 
-  backdrop-filter: blur(10px);
 
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-}
+  <!-- ADDRESS -->
 
+  <div class="menu-item">
 
-/* ---------- HEADER ---------- */
+    <span class="menu-icon">📍</span>
 
-header {
-  background: linear-gradient(
-    120deg,
-    #ff6ec7,
-    #a855f7,
-    #6366f1,
-    #22d3ee
-  );
+    <div>
 
-  background-size: 300% 300%;
+      <strong>Address</strong>
 
-  animation: glow 8s ease infinite;
+      <p>
+        Friends Colony,<br>
+        Etawah, Uttar Pradesh
+      </p>
 
-  padding: 45px 35px;
+    </div>
 
-  display: flex;
+  </div>
 
-  align-items: center;
 
-  gap: 28px;
+  <!-- EMAIL -->
 
-  color: #fff;
+  <div class="menu-item">
 
-  position: relative;
+    <span class="menu-icon">✉</span>
 
-  overflow: hidden;
-}
+    <div>
 
+      <strong>Email</strong>
 
-@keyframes glow {
+      <p>
+        ajay1924773@gmail.com
+      </p>
 
-  0% {
-    background-position: 0% 50%;
-  }
+    </div>
 
-  50% {
-    background-position: 100% 50%;
-  }
+  </div>
 
-  100% {
-    background-position: 0% 50%;
-  }
 
-}
+  <!-- CONTACT -->
 
+  <div class="menu-item">
 
-.photo-box {
-  width: 130px;
-  height: 160px;
+    <span class="menu-icon">☎</span>
 
-  background: #fff;
+    <div>
 
-  border: 4px solid rgba(255,255,255,0.9);
+      <strong>Contact</strong>
 
-  border-radius: 14px;
+      <p>
+        +91 9149177658
+      </p>
 
-  flex-shrink: 0;
+    </div>
 
-  overflow: hidden;
+  </div>
 
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 
-  position: relative;
+  <!-- PROFILE -->
 
-  z-index: 1;
-}
+  <div class="menu-item">
 
+    <span class="menu-icon">💻</span>
 
-.photo-box img {
-  width: 100%;
-  height: 100%;
+    <div>
 
-  object-fit: cover;
+      <strong>Profile</strong>
 
-  display: none;
-}
+      <p>
+        Web Development & Digital Projects
+      </p>
 
+    </div>
 
-.photo-box .placeholder {
-  width: 100%;
-  height: 100%;
+  </div>
 
-  display: flex;
+</div>
 
-  flex-direction: column;
 
-  align-items: center;
+<div class="menu-overlay" id="menuOverlay"></div>
 
-  justify-content: center;
 
-  background: #f3e8ff;
 
-  color: #a855f7;
+<!-- =========================
+     MAIN CARD
+========================= -->
 
-  font-size: 13px;
+<div class="card">
 
-  text-align: center;
 
-  padding: 10px;
+  <!-- HEADER -->
 
-  gap: 6px;
-}
+  <header>
 
+    <div class="photo-box">
 
-.photo-box .placeholder .icon {
-  font-size: 30px;
-}
+      <img
+        src="DJJ.jpeg"
+        id="userPhoto"
+        alt="Ankit Pal"
+      >
 
+      <div
+        class="placeholder"
+        id="photoPlaceholder"
+      >
 
-.header-text {
-  position: relative;
-  z-index: 1;
-}
+        <div class="icon">
+          📷
+        </div>
 
+        <div>
+          Add your<br>
+          photo here
+        </div>
 
-.header-text h1 {
-  font-size: 34px;
+      </div>
 
-  font-weight: 800;
+    </div>
 
-  margin-bottom: 6px;
 
-  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
-}
+    <div class="header-text">
 
+      <h1>
+        Ankit Pal
+      </h1>
 
-.header-text p {
-  font-size: 15px;
+      <p>
+        Web Development | Frontend Technologies & Digital Projects
+      </p>
 
-  color: #fdf4ff;
 
-  font-weight: 500;
-}
+      <div class="badge-row">
 
+        <button
+          class="badge"
+          data-title="Frontend Focus"
+          data-content="My current focus is on creating clean, responsive and user-friendly websites using HTML, CSS and JavaScript."
+        >
+          🎯 Frontend Focus
+        </button>
 
-.badge-row {
-  margin-top: 14px;
 
-  display: flex;
+        <button
+          class="badge"
+          data-title="Web Development"
+          data-content="I work with web technologies to create practical websites and interactive digital projects."
+        >
+          💻 Web Development
+        </button>
 
-  gap: 8px;
 
-  flex-wrap: wrap;
-}
+        <button
+          class="badge"
+          data-title="Digital Projects"
+          data-content="I enjoy creating practical digital projects and improving them through regular development and testing."
+        >
+          🚀 Digital Projects
+        </button>
 
+      </div>
 
-.badge {
-  background: rgba(255,255,255,0.25);
+    </div>
 
-  padding: 5px 14px;
+  </header>
 
-  border-radius: 20px;
 
-  font-size: 12px;
 
-  font-weight: 600;
-}
+  <!-- =========================
+       BODY
+  ========================= -->
 
+  <div class="body-content">
 
-/* ---------- BODY ---------- */
 
-.body-content {
-  padding: 38px 40px 40px;
-}
+    <!-- ABOUT -->
 
+    <section>
 
-section {
-  margin-bottom: 36px;
-}
+      <h2 class="h-about">
+        About Me
+      </h2>
 
+      <div class="subtext">
+        Professional profile and development focus
+      </div>
 
-h2 {
-  font-size: 23px;
+      <p class="body-copy">
+        Main ek beginner web developer hoon jo HTML, CSS aur JavaScript
+        seekh raha hoon. Mujhe naye projects banana aur problem-solving
+        karna pasand hai.
+      </p>
 
-  font-weight: 700;
+      <p class="body-copy">
 
-  margin-bottom: 8px;
-}
+        I believe that every great website starts with
+        <span class="accent1">curiosity</span>
+        and grows through
+        <span class="accent2">consistent practice</span>.
 
+        Each project I build teaches me something new,
+        and I am committed to turning that learning into
+        <span class="accent3">real, usable skills</span>
+        over time.
 
-.h-about {
-  color: #ff8fd6;
-}
+      </p>
 
+    </section>
 
-.h-skills {
-  color: #b794f6;
-}
 
 
-.h-projects {
-  color: #74c7ec;
-}
+    <!-- SKILLS -->
 
+    <section>
 
-.h-contact {
-  color: #5eead4;
-}
+      <h2 class="h-skills">
+        Skills
+      </h2>
 
+      <div class="subtext">
+        Core technologies and tools I work with
+      </div>
 
-section .subtext {
-  font-size: 13px;
 
-  color: #c9bfe8;
+      <div class="skills">
 
-  margin-bottom: 16px;
+        <span class="skill-tag">
+          HTML
+        </span>
 
-  font-style: italic;
-}
+        <span class="skill-tag">
+          CSS
+        </span>
 
+        <span class="skill-tag">
+          JavaScript
+        </span>
 
-section p.body-copy {
-  color: #ddd4f0;
+        <span class="skill-tag">
+          Python (Learning)
+        </span>
 
-  font-size: 15px;
+        <span class="skill-tag">
+          Git / GitHub
+        </span>
 
-  margin-bottom: 12px;
-}
+      </div>
 
+    </section>
 
-section p.body-copy .accent1 {
-  color: #ff8fd6;
 
-  font-weight: 600;
-}
 
+    <!-- PROJECTS -->
 
-section p.body-copy .accent2 {
-  color: #74c7ec;
+    <section>
 
-  font-weight: 600;
-}
+      <h2 class="h-projects">
+        Projects
+      </h2>
 
+      <div class="subtext">
+        Selected projects and practical work
+      </div>
 
-section p.body-copy .accent3 {
-  color: #5eead4;
 
-  font-weight: 600;
-}
+      <div class="project-card">
 
+        <h3>
+          Calculator App
+        </h3>
 
-.skills {
-  display: flex;
+        <p>
+          HTML, CSS aur JavaScript se banaya ek simple calculator
+          jo basic maths calculations kar sakta hai.
+        </p>
 
-  flex-wrap: wrap;
+      </div>
 
-  gap: 10px;
-}
 
+      <div class="project-card">
 
-.skill-tag {
-  padding: 9px 18px;
+        <h3>
+          Portfolio Website
+        </h3>
 
-  border-radius: 20px;
+        <p>
+          Yahi website jo aap abhi dekh rahe hain —
+          mera portfolio project.
+        </p>
 
-  font-size: 13px;
+      </div>
 
-  font-weight: 600;
+    </section>
 
-  border: 1.5px solid;
-}
 
 
-.skill-tag:nth-child(1) {
-  background: rgba(255,142,214,0.12);
+    <!-- CONTACT -->
 
-  border-color: #ff8fd6;
+    <section>
 
-  color: #ff8fd6;
-}
+      <h2 class="h-contact">
+        Get In Touch
+      </h2>
 
 
-.skill-tag:nth-child(2) {
-  background: rgba(183,148,246,0.12);
+      <div class="contact-strip">
 
-  border-color: #b794f6;
+        <p class="body-copy">
 
-  color: #cbb2fb;
-}
+          Have a question, opportunity or project idea?
+          Send me a message directly.
 
+        </p>
 
-.skill-tag:nth-child(3) {
-  background: rgba(116,199,236,0.12);
 
-  border-color: #74c7ec;
+        <button
+          class="contact-btn"
+          id="openContactBtn"
+        >
+          ✉ Email Bhejein
+        </button>
 
-  color: #74c7ec;
-}
+      </div>
 
+    </section>
 
-.skill-tag:nth-child(4) {
-  background: rgba(94,234,212,0.12);
+  </div>
 
-  border-color: #5eead4;
 
-  color: #5eead4;
-}
 
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
-.skill-tag:nth-child(5) {
-  background: rgba(250,204,21,0.12);
+  <footer>
 
-  border-color: #facc15;
+    &copy; 2026 Ankit Pal.
+    All rights reserved.
 
-  color: #facc15;
-}
+  </footer>
 
+</div>
 
-.project-card {
-  background: rgba(255,255,255,0.05);
 
-  border-radius: 12px;
 
-  padding: 22px 24px;
+<!-- =========================
+     PHOTO FULL SCREEN
+========================= -->
 
-  margin-bottom: 16px;
+<div
+  class="photo-viewer"
+  id="photoViewer"
+>
 
-  border-left: 4px solid #a855f7;
-}
+  <button
+    class="photo-close"
+    id="photoClose"
+  >
+    ×
+  </button>
 
 
-.project-card:nth-child(odd) {
-  border-left-color: #22d3ee;
-}
+  <img
+    src="DJJ.jpeg"
+    id="fullPhoto"
+    alt="Full Size Photo"
+  >
 
+</div>
 
-.project-card h3 {
-  color: #fff;
 
-  margin-bottom: 8px;
 
-  font-size: 17px;
-}
+<!-- =========================
+     INFO MODAL
+========================= -->
 
+<div
+  class="info-modal"
+  id="infoModal"
+>
 
-.project-card p {
-  font-size: 14px;
+  <div class="info-box">
 
-  color: #cfc6ea;
-}
+    <button
+      class="modal-close"
+      id="infoClose"
+    >
+      ×
+    </button>
 
 
-.contact-strip {
-  background: linear-gradient(
-    120deg,
-    rgba(255,110,199,0.15),
-    rgba(99,102,241,0.15)
-  );
+    <div class="modal-icon">
+      ✦
+    </div>
 
-  border: 1px solid rgba(255,255,255,0.15);
 
-  border-radius: 16px;
+    <h2 id="infoTitle">
+      Title
+    </h2>
 
-  padding: 30px;
 
-  text-align: center;
-}
+    <p id="infoContent">
+      Content
+    </p>
 
+  </div>
 
-.contact-btn {
-  display: inline-block;
+</div>
 
-  background: linear-gradient(
-    120deg,
-    #ff6ec7,
-    #a855f7,
-    #22d3ee
-  );
 
-  color: #fff;
 
-  padding: 14px 36px;
+<!-- =========================
+     EMAIL COMPOSER
+========================= -->
 
-  border-radius: 30px;
+<div
+  class="contact-modal"
+  id="contactModal"
+>
 
-  text-decoration: none;
+  <div class="contact-box">
 
-  font-weight: 700;
 
-  margin-top: 14px;
+    <button
+      class="modal-close"
+      id="contactClose"
+    >
+      ×
+    </button>
 
-  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
-}
 
+    <div class="modal-icon">
+      ✉
+    </div>
 
-footer {
-  text-align: center;
 
-  padding: 22px;
+    <h2>
+      Send Me a Message
+    </h2>
 
-  background: rgba(0,0,0,0.25);
 
-  color: #c9bfe8;
+    <p class="form-subtitle">
+      Write your message and send it directly.
+    </p>
 
-  font-size: 13px;
-}
 
+    <!-- FORM -->
 
-/* ---------- MOBILE ---------- */
+    <form
+      action="https://formsubmit.co/ajay1924773@gmail.com"
+      method="POST"
+    >
 
-@media (max-width: 560px) {
 
-  header {
-    flex-direction: column;
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Portfolio Contact Message"
+      >
 
-    text-align: center;
-  }
 
-  .badge-row {
-    justify-content: center;
-  }
+      <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+      >
 
-  .body-content {
-    padding: 30px 22px;
-  }
 
-}
+      <input
+        type="hidden"
+        name="_template"
+        value="table"
+      >
+
+
+      <!-- TO -->
+
+      <label for="receiverEmail">
+        To
+      </label>
+
+
+      <input
+        type="email"
+        id="receiverEmail"
+        value="ajay1924773@gmail.com"
+        readonly
+      >
+
+
+
+      <!-- NAME -->
+
+      <label for="visitorName">
+        Your Name
+      </label>
+
+
+      <input
+        type="text"
+        id="visitorName"
+        name="Name"
+        placeholder="Enter your name"
+        required
+      >
+
+
+
+      <!-- EMAIL -->
+
+      <label for="visitorEmail">
+        Your Email
+      </label>
+
+
+      <input
+        type="email"
+        id="visitorEmail"
+        name="Email"
+        placeholder="Enter your email"
+        required
+      >
+
+
+
+      <!-- SUBJECT -->
+
+      <label for="visitorSubject">
+        Subject
+      </label>
+
+
+      <input
+        type="text"
+        id="visitorSubject"
+        name="Subject"
+        placeholder="Enter subject"
+        required
+      >
+
+
+
+      <!-- MESSAGE -->
+
+      <label for="visitorMessage">
+        Message
+      </label>
+
+
+      <textarea
+        id="visitorMessage"
+        name="Message"
+        rows="5"
+        placeholder="Write your message..."
+        required
+      ></textarea>
+
+
+
+      <!-- SEND -->
+
+      <button
+        type="submit"
+        class="send-message-btn"
+      >
+        Send Message
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
